@@ -1,0 +1,186 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "contact": {},
+    "version": "v1.0",
+    "title": "ginchat"
+  },
+  "paths": {
+    "/index": {
+      "get": {
+        "tags": [
+          "首页"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/user/createUser": {
+      "post": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "创建用户",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "姓名",
+            "name": "name",
+            "in": "formData"
+          },
+          {
+            "type": "string",
+            "description": "密码",
+            "name": "password",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "确认密码",
+            "name": "repassword",
+            "in": "formData",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "code\",\"message\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/user/deleteUser": {
+      "delete": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "删除用户",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "用户ID",
+            "name": "id",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "code\",\"message\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/user/getUserList": {
+      "get": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "用户列表",
+        "responses": {
+          "200": {
+            "description": "code\",\"message\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/user/loginUser": {
+      "post": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "用户登录",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "姓名",
+            "name": "name",
+            "in": "formData"
+          },
+          {
+            "type": "string",
+            "description": "密码",
+            "name": "password",
+            "in": "formData",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "code\",\"message\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/user/updateUser": {
+      "post": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "修改用户",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "姓名",
+            "name": "id",
+            "in": "formData"
+          },
+          {
+            "type": "string",
+            "description": "姓名",
+            "name": "name",
+            "in": "formData"
+          },
+          {
+            "type": "string",
+            "description": "密码",
+            "name": "password",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "邮箱",
+            "name": "email",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "手机号码",
+            "name": "phone",
+            "in": "formData",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "code\",\"message\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

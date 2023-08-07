@@ -1,0 +1,26 @@
+app:
+  env: local
+  port: 8081
+  app_name: ginchat
+  app_url: http://localhost
+mysql:
+  dsn: root:root@tcp(127.0.0.1:3306)/ginchat?parseTime=true&charset=utf8
+redis:
+  addr: "172.27.208.1:6379"
+  password: ""
+  DB: 0
+  poolSize: 30
+  minIdleConn: 30
+database:
+  driver: mysql
+  host: 127.0.0.1
+  port: 3306
+  database: ginchat
+  username: root
+  password: root
+  charset: uft8mb4
+  max_idle_conns: 10
+  max_open_conns: 100
+  log_mode: info
+  enable_file_log_writer: true
+  log_filename: sql.log
