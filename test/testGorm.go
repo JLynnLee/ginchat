@@ -14,8 +14,14 @@ func main() {
 	}
 
 	// 迁移 schema
-	db.AutoMigrate(&models.Message{})
-	db.AutoMigrate(&models.Group{})
+	err = db.AutoMigrate(&models.Message{})
+	if err != nil {
+		return
+	}
+	err = db.AutoMigrate(&models.Group{})
+	if err != nil {
+		return
+	}
 	//db.AutoMigrate(&models.UserBasic{})
 	return
 	// Create
